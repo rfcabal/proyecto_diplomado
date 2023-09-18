@@ -1,0 +1,31 @@
+p {
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+section {
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+a {
+    font-size: 16px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer {
+    margin: 15px;
+    border: 1px solid black;
+}
+
+footer p {
+    text-align: center;
+}
