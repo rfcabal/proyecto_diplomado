@@ -1,3 +1,7 @@
+body {
+    font-family: 'Roboto Flex', sans-serif;
+}
+
 p {
     font-size: 14px;
     font-family: 'Courier New', Courier, monospace;
@@ -13,6 +17,7 @@ section {
     margin: 15px;
     padding: 10px;
     border: 1px solid black;
+    border-radius: 10px 20px 30px;
 }
 
 a {
@@ -28,4 +33,17 @@ footer {
 
 footer p {
     text-align: center;
+}
+
+.fotoPerfil {
+    box-shadow: 5px 10px 25px black;
+    border-radius: 10px 20px 30px;
+    filter: grayscale(86%);
+    -webkit-filter: grayscale(86%);
+    -moz-filter: grayscale(86%);
+}
+
+.textoColumna {
+    column-count: 4;
+    column-gap: 10px;
 }
