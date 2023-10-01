@@ -1,0 +1,51 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+section.ejercicio1 {
+    border: 2px solid black;
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+section.ejercicio2 {
+    height: 600px;
+    border: 2px solid black;
+    display: inline-flex;
+    flex-flow: row-reverse;
+    align-items: center;
+}
+
+section.ejercicio3 {
+    border: 2px solid black;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.item:first-child {
+    background-color: red;
+}
+
+.item:nth-child(2) {
+    background-color: blue;
+}
+
+.item:last-child {
+    background-color: green;
+}
