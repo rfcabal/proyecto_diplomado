@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <title>Ejercicio Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css" />
+</header>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-10">
+                <main class="d-flex flex-column">
+                    <section class="p-2">
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item" aria-current="page"><a href="#">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Test de estilos bootstrap</li>
+                            </ol>
+                        </nav>
+                    </section>
+                    <section class="p-2 text-uppercase text-info bg-dark">
+                        <p>Esto es una nueva seccion <p>
+                        <div class="spinner-border text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </section>
+                    <section class="p-2">
+                        <p class="text-break text-primary text-opacity-50 text-truncate" style="max-width: 400px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et dui at sapien ornare
+                            mollis.
+                            Pellentesque a dapibus nisl. Vestibulum posuere nunc id ante facilisis, a ultrices ex
+                            ultrices.
+                            Suspendisse blandit fermentum felis, luctus tempus dolor malesuada ut. Mauris pretium sapien
+                            at massa
+                            tincidunt, eget efficitur nunc blandit. Proin facilisis et dui in finibus. Duis sit amet
+                            commodo lectus.
+                            Aenean laoreet iaculis ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                            Cras ipsum
+                            orci, tincidunt quis gravida nec, sagittis et augue. Integer bibendum enim ut sem
+                            pellentesque ultrices.
+                            Nam dapibus ipsum turpis, sit amet ultrices ligula tincidunt non.
+                        </p> 
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 75%"
+                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </section>
+                    <section class="p-2">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Recipient's username"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <span class="input-group-text" id="basic-addon2">@example.com</span>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label for="customRange1" class="form-label">Example range</label>
+                            <input type="range" class="form-range" id="customRange1">
+                        </div>
+                    </section>
+                    <section class="p-2">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                        Accordion 1
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="d-flex flex-row justify-content-evenly">
+                                            <div class="card" style="width: 18rem;">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card 1</h5>
+                                                    <h6 class="card-subtitle mb-2 text-muted">Sub 1</h6>
+                                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit.
+                                                        Nunc et dui at sapien ornare mollis. Pellentesque a dapibus
+                                                        nisl. Vestibulum
+                                                        posuere nunc id ante facilisis, a ultrices ex ultrices. </p>
+                                                    <a href="#" class="card-link">Card link</a>
+                                                    <a href="#" class="card-link">Another link</a>
+                                                </div>
+                                            </div>
+                                            <div class="card" style="width: 18rem;">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card 2</h5>
+                                                    <h6 class="card-subtitle mb-2 text-muted">Sub 1</h6>
+                                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit.
+                                                        Nunc et dui at sapien ornare mollis. Pellentesque a dapibus
+                                                        nisl. Vestibulum
+                                                        posuere nunc id ante facilisis, a ultrices ex ultrices. </p>
+                                                    <a href="#" class="card-link">Card link</a>
+                                                    <a href="#" class="card-link">Another link</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo">
+                                        Accordion 2
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                            <button type="button" class="btn btn-info">Left</button>
+                                            <button type="button" class="btn btn-primary active">Middle</button>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="popover"
+                                                data-bs-title="Popover title"
+                                                data-bs-content="And here's some amazing content. It's very engaging. Right?">Right</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree">
+                                        Accordion 3
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="alert alert-success" role="alert">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et dui at
+                                            sapien ornare
+                                            mollis. Pellentesque a dapibus nisl. Vestibulum posuere nunc id ante
+                                            facilisis, a
+                                            ultrices ex ultrices.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+</script>
+
+</html>
