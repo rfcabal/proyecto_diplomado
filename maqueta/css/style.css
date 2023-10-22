@@ -27,7 +27,7 @@ header section:first-child {
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url('../img/profile.jpg');
-    border-radius: 10px 0px;
+    border-radius: 10px 0;
 }
 
 header section:nth-child(2) {
@@ -36,11 +36,11 @@ header section:nth-child(2) {
 }
 
 header section:nth-child(2) h1 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 header section:nth-child(2) h4 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 header section nav {
@@ -53,12 +53,12 @@ header section nav ul {
     list-style: none;
     display: flex;
     flex-direction: row;
-    margin: 0px;
+    margin: 0;
 }
 
 header section nav ul li {
     border-left: 1px solid rgba(0, 0, 0, 0.228);
-    padding: 10px 10px;
+    padding: 10px;
 }
 
 header section nav ul li a {
@@ -92,7 +92,7 @@ main .main-content {
 }
 
 main .main-content section h2 {
-    margin: 0px 0px;
+    margin: 0;
 }
 
 main .main-content section:nth-child(odd) {
@@ -141,6 +141,7 @@ main .portafolio {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 main .portafolio .item {
@@ -169,7 +170,7 @@ main .portafolio .item .text-portfolio {
     font-size: 14px;
 }
 
-main .portafolio .item  .button-portfolio {
+main .portafolio .item .button-portfolio {
     background-color: #01736c;
     font-weight: bold;
     font-size: 14px;
@@ -182,7 +183,7 @@ main .portafolio .item a {
     color: white;
 }
 
-main .portafolio .item  .button-portfolio:hover {
+main .portafolio .item .button-portfolio:hover {
     background-color: #4a4a4a;
 }
 
@@ -200,6 +201,9 @@ main .contacto .map {
 
 main .contacto .form-contacto {
     padding: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
 }
 
 main .contacto .form-contacto h4 {
