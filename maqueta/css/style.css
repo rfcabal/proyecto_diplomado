@@ -1,0 +1,218 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Flex', sans-serif;
+    color: #4a4a4a;
+    background-color: #2e7ed3;
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    margin: 60px;
+    border-radius: 10px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+header section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header section:first-child {
+    width: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../img/profile.jpg');
+    border-radius: 10px 0px;
+}
+
+header section:nth-child(2) {
+    width: 100%;
+    text-align: center;
+}
+
+header section:nth-child(2) h1 {
+    margin-bottom: 0px;
+}
+
+header section:nth-child(2) h4 {
+    margin-bottom: 0px;
+}
+
+header section nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+header section nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+}
+
+header section nav ul li {
+    border-left: 1px solid rgba(0, 0, 0, 0.228);
+    padding: 10px 10px;
+}
+
+header section nav ul li a {
+    color: #4a4a4a;
+    text-decoration: none;
+}
+
+header section nav ul li a:hover {
+    color: #4a4a4a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid rgba(0, 0, 0, 0.228);
+}
+
+main nav {
+    background-color: #01736c;
+    width: 175px;
+    display: flex;
+}
+
+main .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+}
+
+main .main-content section h2 {
+    margin: 0px 0px;
+}
+
+main .main-content section:nth-child(odd) {
+    padding: 5px;
+    justify-content: center;
+    text-align: center;
+}
+
+main .main-content section:nth-child(even) {
+    text-align: justify;
+}
+
+main nav ul {
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+    margin: 15px;
+    font-size: 28px;
+    color: white;
+}
+
+main .main-content section:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+main .main-content section:last-child .titulo-experiencia {
+    border-bottom: 1px solid #4a4a4a;
+    margin-bottom: 20px;
+}
+
+main .main-content section:last-child .titulo-experiencia:first-child {
+    margin-top: 30px;
+}
+
+main .main-content section:last-child .titulo-experiencia h4 {
+    margin: 0;
+}
+
+main .main-content section:last-child .resumen-experiencia {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+main .portafolio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main .portafolio .item {
+    margin: 20px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #4a4a4a;
+}
+
+main .portafolio .item .img-portfolio {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../img/portfolio.jpg');
+}
+
+main .portafolio .item .text-portfolio {
+    display: flex;
+    text-align: justify;
+    margin: 15px;
+    font-size: 14px;
+}
+
+main .portafolio .item  .button-portfolio {
+    background-color: #01736c;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+}
+
+main .portafolio .item a {
+    text-decoration: none;
+    color: white;
+}
+
+main .portafolio .item  .button-portfolio:hover {
+    background-color: #4a4a4a;
+}
+
+
+main .contacto {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+main .contacto .map {
+    display: flex;
+    width: 60%;
+}
+
+main .contacto .form-contacto {
+    padding: 20px;
+}
+
+main .contacto .form-contacto h4 {
+    margin: 10px;
+}
+
+main .contacto .form-contacto .form-grupo {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+footer {
+    text-align: center;
+    padding: 5px;
+}
