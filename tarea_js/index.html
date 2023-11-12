@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <title>Ejercicio JS</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" />
+</header>
+
+<body>
+    <main>
+        <h2>Ejercicio 1</h2>
+        <section class="ejercicio1">
+            <div id="cuadro1"></div>
+            <div id="cuadro2"></div>
+            <div id="cuadro3"></div>
+        </section>
+        <section>
+            <h2>Ejercicio 2</h2>
+            <textarea id="texto"></textarea>
+            <div id="contador">0</div>
+        </section>
+        <section>
+            <h2>Ejercicio 3</h2>
+            <div id="resultado"></div>
+        </section>
+    </main>
+    <script>
+
+        /**
+         * Tarea 1
+         */
+
+        const cuadro1 = document.getElementById("cuadro1");
+        const cuadro2 = document.getElementById("cuadro2");
+        const cuadro3 = document.getElementById("cuadro3");
+
+        cuadro1.addEventListener('click', () => {
+            if (cuadro1.style.backgroundColor === "red") {
+                cuadro1.style.backgroundColor = "yellow";
+            } else {
+                cuadro1.style.backgroundColor = "red";
+            }
+        });
+
+        cuadro2.addEventListener('click', () => {
+            if (cuadro2.style.backgroundColor === "blue") {
+                cuadro2.style.backgroundColor = "purple";
+            } else {
+                cuadro2.style.backgroundColor = "blue";
+            }
+        });
+
+        cuadro3.addEventListener('click', () => {
+            if (cuadro3.style.backgroundColor === "green") {
+                cuadro3.style.backgroundColor = "pink";
+            } else {
+                cuadro3.style.backgroundColor = "green";
+            }
+        });
+
+        /** 
+         * Tarea 2
+         */
+
+        const cuadroTexto = document.getElementById("texto");
+        const contador = document.getElementById("contador");
+
+        cuadroTexto.addEventListener('keyup', () => {
+            contador.innerHTML = cuadroTexto.value.length;
+        })
+
+        /** 
+         * Ejercicio 3
+        */
+
+        const resultado = document.getElementById("resultado");
+
+        var alumnos = [
+
+            {
+                nombre: 'Juan Gomez',
+                nota: 7
+            }, {
+                nombre: 'Pedro Rodriguez',
+                nota: 4
+            }, {
+                nombre: 'Roxana García',
+                nota: 8
+            }, {
+                nombre: 'Luciano Lopez',
+                nota: 5
+            }, {
+                nombre: 'Fernanda Gimenez',
+                nota: 6
+            }, {
+                nombre: 'Florencia Martinez',
+                nota: 10
+            }, {
+                nombre: 'Raul Sanchez',
+                nota: 7
+            }, {
+                nombre: 'Sandra Figueroa',
+                nota: 8
+            }
+        ];
+
+        function alumnosAprobados(alumnos) {
+            const aprobados= alumnos.filter(alumno => alumno.nota >= 7 )
+            resultado.innerHTML = JSON.stringify(aprobados);
+        }
+
+        alumnosAprobados(alumnos);
+
+    </script>
+</body>
+
+</html>

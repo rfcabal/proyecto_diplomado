@@ -1,0 +1,22 @@
+.ejercicio1 {
+    display: flex;
+}
+
+.ejercicio1 div {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.ejercicio1 div:first-child {
+    background-color: red;
+}
+
+.ejercicio1 div:nth-child(2) {
+    background-color: blue;
+}
+
+.ejercicio1 div:last-child {
+    background-color: green;
+}
