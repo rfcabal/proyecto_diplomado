@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/pages/HomePage.css'
 
 const HomePage = (props) => {
     return (
