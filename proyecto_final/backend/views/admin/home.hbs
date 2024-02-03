@@ -1,0 +1,69 @@
+<div class="container" style="margin: 50px auto;">
+    <div class="row">
+        <diV class="col">
+            <p class="text-right">
+                Hola {{ usuario }} !
+                <a class="btn btn-danger" href="/admin/login/logout">
+                    Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ curriculum.introduccion }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Experiencia <a href="/admin/accion/nuevo" class="btn btn-success">Nuevo</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each experiencias}}
+                        <tr>
+                            <td>{{id}}</th>
+                            <td>{{titulo}}</th>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a href="/admin/accion/modificar/{{id}}" class="btn btn-primary">Modificar</a>
+                                    <a href="/entradas/eliminar/{{id}}" class="btn btn-primary">Borrar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Cursos
+            {{#each cursos}}
+                {{titulo}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Certificaciones
+            {{#each certificaciones}}
+                {{titulo}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Portafolio
+            {{#each portafolios}}
+                {{titulo}}
+            {{/each}}
+        </div>
+    </div>
+</div>

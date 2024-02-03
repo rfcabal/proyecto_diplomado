@@ -1,0 +1,64 @@
+<div class="container" style="margin: 50px auto;">
+    <div class="row">
+        <diV class="col">
+            <p class="text-right">
+                Hola {{ usuario }} !
+                <a class="btn btn-danger" href="/admin/login/logout">
+                    Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+    <div id="modificar" class="row" style="display: none;">
+        <diV class="col">
+            <form action="/entradas/modificar" method="POST">
+                <input type="hidden" id="id" name="id" value="{{entrada.id}}">
+                <div class="form-group">
+                    <label for="titulo" class="form-label">Titulo</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo" value="{{entrada.titulo}}">
+                </div>
+                <div class="form-group">
+                    <label for="tiempo" class="form-label">Tiempo</label>
+                    <input type="text" class="form-control" id="tiempo" name="tiempo" value="{{entrada.tiempo}}">
+                </div>
+                <div class="form-group">
+                    <label for="texto" class="form-label">Texto</label>
+                    <textarea class="form-control" id="texto" name="texto" rows="3">{{entrada.texto}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+        </div>
+    </div>
+    <div id="nuevo" class="row" style="display: none;">
+        <diV class="col">
+            <form action="/entradas/nuevo" method="POST">
+                <div class="form-group">
+                    <label for="titulo" class="form-label">Titulo</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo">
+                </div>
+                <div class="form-group">
+                    <label for="tiempo" class="form-label">Tiempo</label>
+                    <input type="text" class="form-control" id="tiempo" name="tiempo">
+                </div>
+                <div class="form-group">
+                    <label for="texto" class="form-label">Texto</label>
+                    <textarea class="form-control" id="texto" name="texto" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Nuevo</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    const accion = "{{accion}}";
+
+    if(accion === 'modificar') {
+        document.getElementById('modificar').style.display = 'block'
+        document.getElementById('nuevo').style.display = 'none'
+    } else {
+        document.getElementById('modificar').style.display = 'none'
+        document.getElementById('nuevo').style.display = 'block'
+    }
+    
+    console.log(accion)
+</script>

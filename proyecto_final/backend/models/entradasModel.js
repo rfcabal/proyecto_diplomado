@@ -2,10 +2,50 @@ var pool = require('../config/db');
 
 async function getEntradas() {
     try {
-        var query = "select *  from entradas";
+        var query = "select * from entradas";
         var rows =  await pool.query(query);
         return rows;
     } catch(error) {
+        throw error;
+    }
+}
+
+async function getEntradasByTipo(tipo) {
+    try {
+        var query = "select * from entradas where tipo = ?";
+        var rows =  await pool.query(query, [tipo]);
+        return rows;
+    } catch(error) {
+        throw error;
+    }
+}
+
+async function getEntradasById(tipo) {
+    try {
+        var query = "select * from entradas where id = ?";
+        var row =  await pool.query(query, [tipo]);
+        return row[0];
+    } catch(error) {
+        throw error;
+    }
+}
+
+async function addEntrada(titulo, tiempo, texto) {
+    try {
+        var query = "INSERT INTO entradas(id_usuario, titulo, tiempo, texto, tipo) VALUES (1,?,?,?,'experiencia');"
+        var row =  await pool.query(query, [titulo, tiempo, texto]);
+        return row;
+    } catch (error) {
+        throw error;
+    }
+}
+
+async function modifyEntrada(id, entrada) {
+    try {
+        var query = "UPDATE entradas SET ? where id = ?"
+        var row =  await pool.query(query, [entrada, id]);
+        return row;
+    } catch (error) {
         throw error;
     }
 }
@@ -21,4 +61,4 @@ async function deleteEntradas(id) {
 }
 
 
-module.exports = { getEntradas, deleteEntradas }
+module.exports = { getEntradas, deleteEntradas, getEntradasByTipo, getEntradasById, modifyEntrada, addEntrada }

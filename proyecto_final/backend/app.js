@@ -11,7 +11,8 @@ var curriculumRouter = require('./routes/curriculum');
 var entradasRouter = require('./routes/entradas');
 var categoriasRouter = require('./routes/categorias');
 var loginRouter = require('./routes/admin/login');
-var novedadesRouter = require('./routes/admin/novedades');
+var homeRouter = require('./routes/admin/home');
+var accionRouter = require('./routes/admin/accion');
 
 var app = express();
 
@@ -51,7 +52,8 @@ app.use('/curriculum', curriculumRouter);
 app.use('/entradas', entradasRouter);
 app.use('/categorias', categoriasRouter);
 app.use('/admin/login', loginRouter)
-app.use('/admin/novedades', secured, novedadesRouter)
+app.use('/admin/home', secured, homeRouter)
+app.use('/admin/accion', secured, accionRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
