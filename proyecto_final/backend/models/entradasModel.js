@@ -30,10 +30,10 @@ async function getEntradasById(tipo) {
     }
 }
 
-async function addEntrada(titulo, tiempo, texto) {
+async function addEntrada(titulo, tiempo, texto, media, tipo) {
     try {
-        var query = "INSERT INTO entradas(id_usuario, titulo, tiempo, texto, tipo) VALUES (1,?,?,?,'experiencia');"
-        var row =  await pool.query(query, [titulo, tiempo, texto]);
+        var query = "INSERT INTO entradas(id_usuario, titulo, tiempo, texto, media, tipo) VALUES (1,?,?,?,?,?);"
+        var row =  await pool.query(query, [titulo, tiempo, texto, media, tipo]);
         return row;
     } catch (error) {
         throw error;

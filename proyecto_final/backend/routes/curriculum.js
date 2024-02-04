@@ -8,23 +8,18 @@ router.get('/', async (req, res, next) => {
     res.send(data[0]);
 });
 
-/* POST */
-router.post('/', async (req, res, next) => {
-    var data = await curriculumModel.addCurriculum(req.body.introduccion, req.body.correo, req.body.telefono);
-    res.send(data);
-});
+/* POST Modificar */
+router.post('/modificar', async (req, res, next) => {
+    const { id, introduccion, correo, telefono} = req.body;
+    const obj= {
+        introduccion,
+        correo,
+        telefono
+    }
 
-/* PUT */
-router.put('/:id', async (req, res, next) => {
-    var data = await curriculumModel.modifyCurriculum(req.params.id, req.body.curriculum);
-    res.send(data);
-});
+    await curriculumModel.modifyCurriculum(id, obj);
 
-
-/* DELETE */
-router.delete('/:id', async (req, res, next) => {
-    var data = await curriculumModel.deleteCurriculum(req.params.id);
-    res.send(data);
+    res.redirect('/admin/home')
 });
 
 module.exports = router;

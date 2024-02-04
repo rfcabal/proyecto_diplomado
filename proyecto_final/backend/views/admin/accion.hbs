@@ -22,8 +22,20 @@
                     <input type="text" class="form-control" id="tiempo" name="tiempo" value="{{entrada.tiempo}}">
                 </div>
                 <div class="form-group">
+                    <label for="media" class="form-label">Media URL</label>
+                    <input type="text" class="form-control" id="media" name="media" value="{{entrada.media}}">
+                </div>
+                <div class="form-group">
                     <label for="texto" class="form-label">Texto</label>
                     <textarea class="form-control" id="texto" name="texto" rows="3">{{entrada.texto}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tipo" class="form-label">Tipo de Entrada</label>
+                    <select id="tipo" name="tipo" class="form-select" >
+                        {{#each categorias}}
+                            <option value="{{nombre}}">{{nombre}}</option>
+                        {{/each}}
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Modificar</button>
             </form>
@@ -40,9 +52,22 @@
                     <label for="tiempo" class="form-label">Tiempo</label>
                     <input type="text" class="form-control" id="tiempo" name="tiempo">
                 </div>
+                 <div class="form-group">
+                    <label for="media" class="form-label">Media URL</label>
+                    <input type="text" class="form-control" id="media" name="media">
+                </div>
                 <div class="form-group">
                     <label for="texto" class="form-label">Texto</label>
                     <textarea class="form-control" id="texto" name="texto" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tipo" class="form-label">Tipo de Entrada</label>
+                    <select name="tipo" class="form-select">
+                        <option selected style="display: none;">Selecciona un tipo</option>
+                        {{#each categorias}}
+                            <option value="{{nombre}}">{{nombre}}</option>
+                        {{/each}}
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Nuevo</button>
             </form>
@@ -55,10 +80,12 @@
     if(accion === 'modificar') {
         document.getElementById('modificar').style.display = 'block'
         document.getElementById('nuevo').style.display = 'none'
+        document.getElementById('tipo').value = "{{entrada.tipo}}";
     } else {
         document.getElementById('modificar').style.display = 'none'
         document.getElementById('nuevo').style.display = 'block'
     }
+
     
-    console.log(accion)
+
 </script>

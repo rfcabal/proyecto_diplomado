@@ -10,20 +10,22 @@ router.get('/', async (req, res, next) => {
 
 /* POST Nuevo */
 router.post('/nuevo', async (req, res, next) => {
-    const {titulo, tiempo, texto} = req.body;
+    const {titulo, tiempo, texto, media, tipo} = req.body;
 
-    await entradasModel.addEntrada(titulo, tiempo,texto);
+    await entradasModel.addEntrada(titulo, tiempo, texto, media, tipo);
 
     res.redirect('/admin/home')
 });
 
 /* POST Modificar */
 router.post('/modificar', async (req, res, next) => {
-    const { id, titulo, tiempo, texto} = req.body;
+    const { id, titulo, tiempo, texto, media, tipo } = req.body;
     const obj= {
         titulo,
         tiempo,
-        texto
+        texto,
+        media,
+        tipo
     }
 
     await entradasModel.modifyEntrada(id, obj);

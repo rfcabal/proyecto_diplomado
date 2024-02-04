@@ -1,42 +1,63 @@
-<div class="container" style="margin: 50px auto;">
+<div class="container" style="margin: 70px auto;">
     <div class="row">
-        <diV class="col">
+        <diV class="col d-flex flex-row justify-content-between">
             <p class="text-right">
                 Hola {{ usuario }} !
-                <a class="btn btn-danger" href="/admin/login/logout">
-                    Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
-                </a>
             </p>
+            <a class="btn btn-danger" href="/admin/login/logout">
+                Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
+            </a>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            {{ curriculum.introduccion }}
+            <form action="/curriculum/modificar" method="POST">
+                <input type="hidden" id="id" name="id" value="{{curriculum.id}}">
+                <div class="input-group">
+                    <span class="input-group-text">Correo</span>
+                    <input type="text" class="form-control" id="correo" name="correo" value="{{curriculum.correo}}">
+                    <span class="input-group-text">Telefono</span>
+                    <input type="text" class="form-control" id="telefono" name="telefono" value="{{curriculum.telefono}}">
+                </div>
+                <div class="form-group">
+                    <label for="introduccion" class="form-label">Introduccion</label>
+                    <textarea class="form-control" id="introduccion" name="introduccion" rows="3">{{curriculum.introduccion}}</textarea>
+                </div>
+                <div class="form-group d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">Modificar Introduccion</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col d-flex justify-content-end">
+            <a href="/admin/accion/nuevo" class="btn btn-success">Nueva Entrada</a>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            Experiencia <a href="/admin/accion/nuevo" class="btn btn-success">Nuevo</a>
+            Experiencia
             <table class="table">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Titulo</th>
-                    <th scope="col">Acciones</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     {{#each experiencias}}
-                        <tr>
-                            <td>{{id}}</th>
-                            <td>{{titulo}}</th>
-                            <td>
-                                <div class="btn-group" role="group">
-                                    <a href="/admin/accion/modificar/{{id}}" class="btn btn-primary">Modificar</a>
-                                    <a href="/entradas/eliminar/{{id}}" class="btn btn-primary">Borrar</a>
-                                </div>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>{{id}}</th>
+                        <td>{{titulo}}</th>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="/admin/accion/modificar/{{id}}" class="btn btn-primary">Modificar</a>
+                                <a href="/entradas/eliminar/{{id}}" class="btn btn-primary">Borrar</a>
+                            </div>
+                        </td>
+                    </tr>
                     {{/each}}
                 </tbody>
             </table>
@@ -45,25 +66,85 @@
     <div class="row">
         <div class="col">
             Cursos
-            {{#each cursos}}
-                {{titulo}}
-            {{/each}}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each cursos}}
+                    <tr>
+                        <td>{{id}}</th>
+                        <td>{{titulo}}</th>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="/admin/accion/modificar/{{id}}" class="btn btn-primary">Modificar</a>
+                                <a href="/entradas/eliminar/{{id}}" class="btn btn-primary">Borrar</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="row">
         <div class="col">
             Certificaciones
-            {{#each certificaciones}}
-                {{titulo}}
-            {{/each}}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each certificaciones}}
+                    <tr>
+                        <td>{{id}}</th>
+                        <td>{{titulo}}</th>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="/admin/accion/modificar/{{id}}" class="btn btn-primary">Modificar</a>
+                                <a href="/entradas/eliminar/{{id}}" class="btn btn-primary">Borrar</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="row">
         <div class="col">
             Portafolio
-            {{#each portafolios}}
-                {{titulo}}
-            {{/each}}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each portafolios}}
+                    <tr>
+                        <td>{{id}}</th>
+                        <td>{{titulo}}</th>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="/admin/accion/modificar/{{id}}" class="btn btn-primary">Modificar</a>
+                                <a href="/entradas/eliminar/{{id}}" class="btn btn-primary">Borrar</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
