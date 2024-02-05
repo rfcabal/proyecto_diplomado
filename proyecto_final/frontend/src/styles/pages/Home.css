@@ -1,0 +1,59 @@
+main nav {
+    background-color: #01736c;
+    width: 175px;
+    display: flex;
+}
+
+
+main nav ul {
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+    margin: 15px;
+    font-size: 28px;
+    color: white;
+}
+
+main .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+}
+
+main .main-content section h2 {
+    margin: 0;
+}
+
+main .main-content section:nth-child(odd) {
+    padding: 5px;
+    justify-content: center;
+    text-align: center;
+}
+
+main .main-content section:nth-child(even) {
+    text-align: justify;
+}
+
+main .main-content section:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+main .main-content section:last-child .titulo-experiencia {
+    border-bottom: 1px solid #4a4a4a;
+    margin-bottom: 20px;
+}
+
+main .main-content section:last-child .titulo-experiencia:first-child {
+    margin-top: 30px;
+}
+
+main .main-content section:last-child .titulo-experiencia h4 {
+    margin: 0;
+}
+
+main .main-content section:last-child .resumen-experiencia {
+    text-align: justify;
+    margin-bottom: 20px;
+}

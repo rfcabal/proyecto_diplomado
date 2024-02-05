@@ -1,0 +1,31 @@
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+header section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header section:first-child {
+    width: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../../../public/images/profile.jpg');
+    border-radius: 10px 0;
+}
+
+header section:nth-child(2) {
+    width: 100%;
+    text-align: center;
+}
+
+header section:nth-child(2) h1 {
+    margin-bottom: 0;
+}
+
+header section:nth-child(2) h4 {
+    margin-bottom: 0;
+}

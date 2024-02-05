@@ -1,0 +1,28 @@
+header section nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+header section nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+header section nav ul li {
+    border-left: 1px solid rgba(0, 0, 0, 0.228);
+    padding: 10px;
+}
+
+header section nav ul li a {
+    color: #4a4a4a;
+    text-decoration: none;
+}
+
+header section nav ul li a:hover {
+    color: #4a4a4a;
+    font-weight: bold;
+    text-decoration: none;
+}
