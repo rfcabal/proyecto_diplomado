@@ -1,18 +1,20 @@
 require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
+var cors =  require('cors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var session = require('express-session')
+var session = require('express-session');
+var fileUpload = require('express-fileupload');
 
 var indexRouter = require('./routes/index');
-var curriculumRouter = require('./routes/curriculum');
-var entradasRouter = require('./routes/entradas');
-var categoriasRouter = require('./routes/categorias');
+var curriculumRouter = require('./routes/admin/curriculum');
+var entradasRouter = require('./routes/admin/entradas');
 var loginRouter = require('./routes/admin/login');
 var homeRouter = require('./routes/admin/home');
 var accionRouter = require('./routes/admin/accion');
+var apiRouter = require('./routes/api/api');
 
 var app = express();
 
@@ -25,6 +27,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}))
 
 var secured = async(req, res, next) => {
   try {
@@ -47,12 +54,13 @@ app.use(session({
 }))
 
 app.use('/', indexRouter);
-app.use('/curriculum', curriculumRouter);
-app.use('/entradas', entradasRouter);
-app.use('/categorias', categoriasRouter);
 app.use('/admin/login', loginRouter)
 app.use('/admin/home', secured, homeRouter)
 app.use('/admin/accion', secured, accionRouter)
+app.use('/admin/curriculum', secured, curriculumRouter);
+app.use('/admin/entradas', secured, entradasRouter);
+app.use('/api/', cors(), apiRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

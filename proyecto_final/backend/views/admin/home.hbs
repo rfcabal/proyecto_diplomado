@@ -1,6 +1,6 @@
 <div class="container" style="margin: 70px auto;">
     <div class="row">
-        <diV class="col d-flex flex-row justify-content-between">
+        <diV class="col d-flex flex-row justify-content-between p-4">
             <p class="text-right">
                 Hola {{ usuario }} !
             </p>
@@ -11,19 +11,54 @@
     </div>
     <div class="row">
         <div class="col">
-            <form action="/curriculum/modificar" method="POST">
+            <form action="/admin/curriculum/modificar" method="POST" enctype="multipart/form-data">
                 <input type="hidden" id="id" name="id" value="{{curriculum.id}}">
-                <div class="input-group">
+                <input type="hidden" id="foto" name="foto" value="{{entrada.foto}}">
+                <div class="input-group p-2">
+                    <span class="input-group-text">Nombre</span>
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="{{curriculum.nombre}}">
+                    <span class="input-group-text">Posición</span>
+                    <input type="text" class="form-control" id="posicion" name="posicion"
+                        value="{{curriculum.posicion}}">
+                </div>
+                <div class="input-group p-2">
                     <span class="input-group-text">Correo</span>
                     <input type="text" class="form-control" id="correo" name="correo" value="{{curriculum.correo}}">
                     <span class="input-group-text">Telefono</span>
-                    <input type="text" class="form-control" id="telefono" name="telefono" value="{{curriculum.telefono}}">
+                    <input type="text" class="form-control" id="telefono" name="telefono"
+                        value="{{curriculum.telefono}}">
                 </div>
-                <div class="form-group">
+                <hr>
+                <div class="form-group p-2">
                     <label for="introduccion" class="form-label">Introduccion</label>
-                    <textarea class="form-control" id="introduccion" name="introduccion" rows="3">{{curriculum.introduccion}}</textarea>
+                    <textarea class="form-control" id="introduccion" name="introduccion"
+                        rows="3">{{curriculum.introduccion}}</textarea>
                 </div>
-                <div class="form-group d-flex justify-content-end">
+                <hr>
+                <div class="input-group p-2">
+                    <span class="input-group-text">Linkedin</span>
+                    <input type="text" class="form-control" id="linkedin" name="linkedin"
+                        value="{{curriculum.linkedin}}">
+                </div>
+                <div class="input-group p-2">
+                    <span class="input-group-text">Github</span>
+                    <input type="text" class="form-control" id="github" name="github" value="{{curriculum.github}}">
+                </div>
+                <div class="input-group p-2">
+                    <span class="input-group-text">Reddit</span>
+                    <input type="text" class="form-control" id="reddit" name="reddit" value="{{curriculum.reddit}}">
+                </div>
+                <hr>
+                    <div class="form-label">Imagen Actual</div>
+                    <div class="input-group p-2">
+                        {{{imagen}}}
+                    </div>
+                    <div class="input-group p-2">
+                        <span class="input-group-text">Foto de Perfil</span>
+                        <input type="file" class="form-control" id="imagen" name="imagen" value="{{curriculum.imagen}}">
+                    </div>
+                <hr>
+                <div class="form-group d-flex justify-content-center p-2">
                     <button type="submit" class="btn btn-primary">Modificar Introduccion</button>
                 </div>
             </form>
@@ -43,7 +78,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Titulo</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col" style="text-align: right;">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,7 +86,7 @@
                     <tr>
                         <td>{{id}}</th>
                         <td>{{titulo}}</th>
-                        <td>
+                        <td class="d-flex justify-content-end">
                             <div class="btn-group" role="group">
                                 <a href="/admin/accion/modificar/{{id}}" class="btn btn-primary">Modificar</a>
                                 <a href="/entradas/eliminar/{{id}}" class="btn btn-primary">Borrar</a>
@@ -71,7 +106,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Titulo</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col" style="text-align: right;">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,7 +114,7 @@
                     <tr>
                         <td>{{id}}</th>
                         <td>{{titulo}}</th>
-                        <td>
+                        <td class="d-flex justify-content-end">
                             <div class="btn-group" role="group">
                                 <a href="/admin/accion/modificar/{{id}}" class="btn btn-primary">Modificar</a>
                                 <a href="/entradas/eliminar/{{id}}" class="btn btn-primary">Borrar</a>
@@ -99,7 +134,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Titulo</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col" style="text-align: right;">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -107,7 +142,35 @@
                     <tr>
                         <td>{{id}}</th>
                         <td>{{titulo}}</th>
-                        <td>
+                        <td class="d-flex justify-content-end">
+                            <div class="btn-group" role="group">
+                                <a href="/admin/accion/modificar/{{id}}" class="btn btn-primary">Modificar</a>
+                                <a href="/entradas/eliminar/{{id}}" class="btn btn-primary">Borrar</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Blog
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col" style="text-align: right;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each blogs}}
+                    <tr>
+                        <td>{{id}}</th>
+                        <td>{{titulo}}</th>
+                        <td class="d-flex justify-content-end">
                             <div class="btn-group" role="group">
                                 <a href="/admin/accion/modificar/{{id}}" class="btn btn-primary">Modificar</a>
                                 <a href="/entradas/eliminar/{{id}}" class="btn btn-primary">Borrar</a>
@@ -127,7 +190,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Titulo</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col" style="text-align: right;">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -135,7 +198,7 @@
                     <tr>
                         <td>{{id}}</th>
                         <td>{{titulo}}</th>
-                        <td>
+                        <td class="d-flex justify-content-end">
                             <div class="btn-group" role="group">
                                 <a href="/admin/accion/modificar/{{id}}" class="btn btn-primary">Modificar</a>
                                 <a href="/entradas/eliminar/{{id}}" class="btn btn-primary">Borrar</a>

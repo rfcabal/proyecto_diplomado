@@ -6,16 +6,30 @@ import HomePage from './pages/HomePage'
 import BlogPage from './pages/BlogPage';
 import PortafolioPage from './pages/PortafolioPage';
 import ContactoPage from './pages/ContactoPage';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 function App() {
+
+  const [resp, setData] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const respGlobal = await axios.get('http://localhost:3001/api/curriculum/');
+      setData(respGlobal.data);
+    };
+    
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <div className="container">
       <BrowserRouter>
-          <Header />
+          <Header nombre={resp.nombre}  posicion={resp.posicion} />
           <Routes>
-            <Route path='/' element={<HomePage />} />
+            <Route path='/' element={<HomePage introduccion={resp.introduccion}  telefono={resp.telefono} correo={resp.correo} linkedin={resp.linkedin} github={resp.github} reddit={resp.reddit}/>} />
             <Route path='/blog' element={<BlogPage />} />
             <Route path='/portafolio' element={<PortafolioPage />} />
             <Route path='/contacto' element={<ContactoPage />} />

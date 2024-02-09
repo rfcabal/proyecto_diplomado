@@ -1,18 +1,19 @@
-<div class="container" style="margin: 50px auto;">
+<div class="container" style="margin: 70px auto;">
     <div class="row">
-        <diV class="col">
+        <diV class="col d-flex flex-row justify-content-between p-4">
             <p class="text-right">
                 Hola {{ usuario }} !
-                <a class="btn btn-danger" href="/admin/login/logout">
-                    Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
-                </a>
             </p>
+            <a class="btn btn-danger" href="/admin/login/logout">
+                Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
+            </a>
         </div>
     </div>
     <div id="modificar" class="row" style="display: none;">
         <diV class="col">
-            <form action="/entradas/modificar" method="POST">
+            <form action="/admin/entradas/modificar" method="POST" enctype="multipart/form-data"> 
                 <input type="hidden" id="id" name="id" value="{{entrada.id}}">
+                <input type="hidden" id="media" name="media" value="{{entrada.media}}">
                 <div class="form-group">
                     <label for="titulo" class="form-label">Titulo</label>
                     <input type="text" class="form-control" id="titulo" name="titulo" value="{{entrada.titulo}}">
@@ -22,8 +23,12 @@
                     <input type="text" class="form-control" id="tiempo" name="tiempo" value="{{entrada.tiempo}}">
                 </div>
                 <div class="form-group">
+                    <div class="form-label">Imagen Actual</div>
+                    {{{imagen}}}
+                </div>
+                <div class="form-group">
                     <label for="media" class="form-label">Media URL</label>
-                    <input type="text" class="form-control" id="media" name="media" value="{{entrada.media}}">
+                    <input type="file" class="form-control" id="imagen" name="imagen" value="{{entrada.imagen}}">
                 </div>
                 <div class="form-group">
                     <label for="texto" class="form-label">Texto</label>
@@ -37,13 +42,15 @@
                         {{/each}}
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Modificar</button>
+                <div class="form-group d-flex justify-content-center p-2">
+                    <button type="submit" class="btn btn-primary">Modificar</button>
+                </div>
             </form>
         </div>
     </div>
     <div id="nuevo" class="row" style="display: none;">
         <diV class="col">
-            <form action="/entradas/nuevo" method="POST">
+            <form action="/admin/entradas/nuevo" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="titulo" class="form-label">Titulo</label>
                     <input type="text" class="form-control" id="titulo" name="titulo">
@@ -54,7 +61,7 @@
                 </div>
                  <div class="form-group">
                     <label for="media" class="form-label">Media URL</label>
-                    <input type="text" class="form-control" id="media" name="media">
+                    <input type="file" class="form-control" id="media" name="media">
                 </div>
                 <div class="form-group">
                     <label for="texto" class="form-label">Texto</label>
@@ -69,7 +76,9 @@
                         {{/each}}
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Nuevo</button>
+                <div class="form-group d-flex justify-content-center p-2">
+                    <button type="submit" class="btn btn-primary">Nuevo</button>
+                </div>
             </form>
         </div>
     </div>

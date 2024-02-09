@@ -10,8 +10,23 @@ main nav ul {
     list-style: none;
     list-style-type: none;
     margin: 15px;
-    font-size: 28px;
+    font-size: 14px;
     color: white;
+    text-align: left;
+}
+
+main nav ul li {
+    margin: 10px 0;
+}
+
+main nav ul a {
+    color: white;
+    margin: 0;
+}
+
+
+main nav ul li svg {
+    margin: 0 10px 5px 0 ;
 }
 
 main .main-content {

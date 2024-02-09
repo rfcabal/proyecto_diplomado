@@ -4,7 +4,7 @@ async function getCurriculum() {
     try {
         var query = "SELECT * FROM curriculum";
         var rows =  await pool.query(query);
-        return rows;
+        return rows[0];
     } catch(error) {
         throw error;
     }

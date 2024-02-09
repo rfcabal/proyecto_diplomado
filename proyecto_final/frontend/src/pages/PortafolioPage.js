@@ -1,106 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import '../styles/pages/Portafolio.css';
 
 const PortafolioPage = (props) => {
+
+    const [portafolios, setPortafolios] = useState([]);
+
+    useEffect(() => {
+        const cargarPortafolio = async () => {
+            const responsePortafolios = await axios.get('http://localhost:3001/api/entradas?tipo=portafolio');
+
+            setPortafolios(responsePortafolios.data);
+        }
+
+        cargarPortafolio();
+
+    }, []);
+
+
     return (
         <main>
             <section className="portafolio">
-                <div className="item">
-                    <div className="img-portfolio"></div>
-                    <div className="text-portfolio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere sollicitudin nisl eu
-                        accumsan. Etiam ornare augue vitae libero imperdiet laoreet.
-                    </div>
-                    <a href="#">
-                        <div className="button-portfolio">
-                            Ver
+                {
+                    portafolios.map( portafolio => 
+                        <div className="item" key={portafolio.id}>
+                            <div className="img-portfolio"></div>
+                            <div className="text-portfolio">
+                                {portafolio.texto}
+                            </div>
+                            <a href={ `portafolio/${portafolio.id}` }>
+                                <div className="button-portfolio">
+                                    Ver
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div className="item">
-                    <div className="img-portfolio"></div>
-                    <div className="text-portfolio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere sollicitudin nisl eu
-                        accumsan. Etiam ornare augue vitae libero imperdiet laoreet.
-                    </div>
-                    <a href="#">
-                        <div className="button-portfolio">
-                            Ver
-                        </div>
-                    </a>
-                </div>
-                <div className="item">
-                    <div className="img-portfolio"></div>
-                    <div className="text-portfolio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere sollicitudin nisl eu
-                        accumsan. Etiam ornare augue vitae libero imperdiet laoreet.
-                    </div>
-                    <a href="#">
-                        <div className="button-portfolio">
-                            Ver
-                        </div>
-                    </a>
-                </div>
-                <div className="item">
-                    <div className="img-portfolio"></div>
-                    <div className="text-portfolio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere sollicitudin nisl eu
-                        accumsan. Etiam ornare augue vitae libero imperdiet laoreet.
-                    </div>
-                    <a href="#">
-                        <div className="button-portfolio">
-                            Ver
-                        </div>
-                    </a>
-                </div>
-                <div className="item">
-                    <div className="img-portfolio"></div>
-                    <div className="text-portfolio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere sollicitudin nisl eu
-                        accumsan. Etiam ornare augue vitae libero imperdiet laoreet.
-                    </div>
-                    <a href="#">
-                        <div className="button-portfolio">
-                            Ver
-                        </div>
-                    </a>
-                </div>
-                <div className="item">
-                    <div className="img-portfolio"></div>
-                    <div className="text-portfolio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere sollicitudin nisl eu
-                        accumsan. Etiam ornare augue vitae libero imperdiet laoreet.
-                    </div>
-                    <a href="#">
-                        <div className="button-portfolio">
-                            Ver
-                        </div>
-                    </a>
-                </div>
-                <div className="item">
-                    <div className="img-portfolio"></div>
-                    <div className="text-portfolio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere sollicitudin nisl eu
-                        accumsan. Etiam ornare augue vitae libero imperdiet laoreet.
-                    </div>
-                    <a href="#">
-                        <div className="button-portfolio">
-                            Ver
-                        </div>
-                    </a>
-                </div>
-                <div className="item">
-                    <div className="img-portfolio"></div>
-                    <div className="text-portfolio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere sollicitudin nisl eu
-                        accumsan. Etiam ornare augue vitae libero imperdiet laoreet.
-                    </div>
-                    <a href="#">
-                        <div className="button-portfolio">
-                            Ver
-                        </div>
-                    </a>
-                </div>
+                    )
+                }
             </section>
         </main>
     );
