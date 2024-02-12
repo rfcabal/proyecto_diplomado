@@ -1,16 +1,16 @@
-var express = require('express');
-var router = express.Router();
-var util =  require('util');
-var cloudinary =  require('cloudinary').v2;
+const express = require('express');
+const router = express.Router();
+const util =  require('util');
+const cloudinary =  require('cloudinary').v2;
 const uploader = util.promisify(cloudinary.uploader.upload);
 const destroy = util.promisify(cloudinary.uploader.destroy);
 
-var curriculumModel = require('../../models/curriculumModel');
+const curriculumModel = require('../../models/curriculumModel');
 
 /* POST Modificar */
 router.post('/modificar', async (req, res, next) => {
     const { id, introduccion, correo, telefono, nombre, posicion, linkedin, github, reddit, foto} = req.body;
-    let img_id = '';
+    let img_id;
 
     try {
 

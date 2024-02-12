@@ -7,6 +7,7 @@ const Header = (props) => {
     return (
         <header>
             <section>
+                <img src={props.profile} alt="profile"></img>
             </section>
             <section>
                 <h1>{props.nombre}</h1>

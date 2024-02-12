@@ -1,8 +1,8 @@
-var express =  require('express');
-var router = express.Router();
-var entradasModel = require('../../models/entradasModel');
-var categoriasModel = require('../../models/categoriaModel');
-var cloudinary =  require('cloudinary').v2;
+const express =  require('express');
+const router = express.Router();
+const entradasModel = require('../../models/entradasModel');
+const categoriasModel = require('../../models/categoriaModel');
+const cloudinary =  require('cloudinary').v2;
 
 /* GET */
 router.get('/:accion/:id', async (req, res, next) => {

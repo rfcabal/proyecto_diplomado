@@ -11,21 +11,25 @@ header section {
 
 header section:first-child {
     width: 150px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url('../../../public/images/profile.jpg');
+    border-radius: 10px 0;
+}
+
+header section:first-child img {
     border-radius: 10px 0;
 }
 
 header section:nth-child(2) {
     width: 100%;
     text-align: center;
+    justify-content: space-between;
 }
 
 header section:nth-child(2) h1 {
     margin-bottom: 0;
+    margin-top: 50px;
 }
 
 header section:nth-child(2) h4 {
+    margin-top: 10px;
     margin-bottom: 0;
 }

@@ -1,9 +1,9 @@
-var express =  require('express');
-var router = express.Router();
-var curriculumModel = require('../../models/curriculumModel');
-var categoriasModel = require('../../models/categoriaModel');
-var entradasModel = require('../../models/entradasModel');
-var cloudinary =  require('cloudinary').v2;
+const express =  require('express');
+const router = express.Router();
+const curriculumModel = require('../../models/curriculumModel');
+const categoriasModel = require('../../models/categoriaModel');
+const entradasModel = require('../../models/entradasModel');
+const cloudinary =  require('cloudinary').v2;
 
 router.get('/', async (req, res, next) => {
 

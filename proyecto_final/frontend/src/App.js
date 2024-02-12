@@ -8,6 +8,7 @@ import PortafolioPage from './pages/PortafolioPage';
 import ContactoPage from './pages/ContactoPage';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import BlogSinglePage from './pages/BlogSinglePage';
 
 
 function App() {
@@ -27,10 +28,11 @@ function App() {
     <div className="App">
       <div className="container">
       <BrowserRouter>
-          <Header nombre={resp.nombre}  posicion={resp.posicion} />
+          <Header profile={resp.imagen}  nombre={resp.nombre}  posicion={resp.posicion} />
           <Routes>
             <Route path='/' element={<HomePage introduccion={resp.introduccion}  telefono={resp.telefono} correo={resp.correo} linkedin={resp.linkedin} github={resp.github} reddit={resp.reddit}/>} />
             <Route path='/blog' element={<BlogPage />} />
+            <Route path='/blog/:id' element={<BlogSinglePage />} />
             <Route path='/portafolio' element={<PortafolioPage />} />
             <Route path='/contacto' element={<ContactoPage />} />
           </Routes>

@@ -24,10 +24,10 @@ const BlogPage = (props) => {
                     blogs.map( blog =>
                         <div className="item" key={blog.id}>
                             <div className="image">
-                                <img src="/images/portfolio.jpg" alt="imagen blog" width="115px" />
+                                <img src={blog.imagen} alt="imagen blog" width="115px" />
                             </div>
                             <div className="texto-blog">
-                                {blog.texto}
+                                <p>{blog.texto}</p>
                                 <a href={`blog/${blog.id}`}>Leer más...</a>
                             </div>
                         </div>

@@ -1,22 +1,22 @@
 require('dotenv').config()
-var createError = require('http-errors');
-var express = require('express');
-var cors =  require('cors');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var session = require('express-session');
-var fileUpload = require('express-fileupload');
+const createError = require('http-errors');
+const express = require('express');
+const cors =  require('cors');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const session = require('express-session');
+const fileUpload = require('express-fileupload');
 
-var indexRouter = require('./routes/index');
-var curriculumRouter = require('./routes/admin/curriculum');
-var entradasRouter = require('./routes/admin/entradas');
-var loginRouter = require('./routes/admin/login');
-var homeRouter = require('./routes/admin/home');
-var accionRouter = require('./routes/admin/accion');
-var apiRouter = require('./routes/api/api');
+const indexRouter = require('./routes/index');
+const curriculumRouter = require('./routes/admin/curriculum');
+const entradasRouter = require('./routes/admin/entradas');
+const loginRouter = require('./routes/admin/login');
+const homeRouter = require('./routes/admin/home');
+const accionRouter = require('./routes/admin/accion');
+const apiRouter = require('./routes/api/api');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,7 +33,7 @@ app.use(fileUpload({
   tempFileDir: '/tmp/'
 }))
 
-var secured = async(req, res, next) => {
+const secured = async(req, res, next) => {
   try {
     if(req.session.id_usuario) {
       next();

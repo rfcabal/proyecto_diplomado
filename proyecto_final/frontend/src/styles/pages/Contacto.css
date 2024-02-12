@@ -25,3 +25,13 @@ main .contacto .form-contacto .form-grupo {
     display: flex;
     flex-direction: row;
 }
+
+main .contacto .form-contacto .form-grupo div {
+    display: flex;
+    flex-direction: row;
+}
+
+main .contacto .form-contacto .form-grupo div label {
+    font-weight: 600;
+    margin: 0 5px;
+}

@@ -24,11 +24,13 @@ const PortafolioPage = (props) => {
                 {
                     portafolios.map( portafolio => 
                         <div className="item" key={portafolio.id}>
-                            <div className="img-portfolio"></div>
-                            <div className="text-portfolio">
-                                {portafolio.texto}
+                            <div className="img-portfolio">
+                                <img src={portafolio.imagen} alt="profile"></img>
                             </div>
-                            <a href={ `portafolio/${portafolio.id}` }>
+                            <div className="text-portfolio">
+                                <p>{portafolio.texto}</p>
+                            </div>
+                            <a href={portafolio.titulo} target="_tab">
                                 <div className="button-portfolio">
                                     Ver
                                 </div>

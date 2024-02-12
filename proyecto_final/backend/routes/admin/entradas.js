@@ -1,16 +1,16 @@
-var express = require('express');
-var router = express.Router();
-var util =  require('util');
-var cloudinary =  require('cloudinary').v2;
+const express = require('express');
+const router = express.Router();
+const util =  require('util');
+const cloudinary =  require('cloudinary').v2;
 
 const uploader = util.promisify(cloudinary.uploader.upload);
 const destroy = util.promisify(cloudinary.uploader.destroy);
-var entradasModel = require('../../models/entradasModel');
+const entradasModel = require('../../models/entradasModel');
 
 /* POST Nuevo */
 router.post('/nuevo', async (req, res, next) => {
     const {titulo, tiempo, texto, tipo} = req.body;
-    var img_id = '';
+    let img_id;
 
     try {
         if(req.files && Object.keys(req.files).length > 0) {
@@ -29,14 +29,14 @@ router.post('/nuevo', async (req, res, next) => {
 /* POST Modificar */
 router.post('/modificar', async (req, res, next) => {
     const { id, titulo, tiempo, texto, media, tipo } = req.body;
-    let img_id = '';
+    let img_id;
 
     try {
 
         if(req.files && Object.keys(req.files).length > 0) {
             const imagen = req.files.imagen;
             img_id = (await uploader(imagen.tempFilePath)).public_id;
-            await (destroy(media))
+            if(media) await (destroy(media))
         }
 
         const obj= {

@@ -6,6 +6,23 @@ main .blog {
     margin-top: 20px;
 }
 
+main .entrada {
+    display: flex;
+    flex-direction: row;
+}
+
+main .entrada img {
+    float: right;
+    margin: 0 10px 15px 0;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+main .entrada p {
+    text-align: justify;
+    margin: 0;
+}
+
 main .blog .item {
     display: flex;
     width: 100%;
@@ -17,7 +34,17 @@ main .blog .item .texto-blog {
     display: flex;
     flex-wrap: wrap;
     padding: 0px 20px;
+}
+
+main .blog .item .texto-blog p {
+    display: -webkit-box;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; 
+    margin: 0;
     text-align: justify;
+    max-height: 75px;
 }
 
 main .blog-item {
