@@ -28,7 +28,7 @@ const BlogPage = (props) => {
                             </div>
                             <div className="texto-blog">
                                 <p>{blog.texto}</p>
-                                <a href={`blog/${blog.id}`}>Leer más...</a>
+                                <p><a href={`blog/${blog.id}`}>Leer más...</a></p>
                             </div>
                         </div>
                     ) : <p>No hay nuevas entradas</p>

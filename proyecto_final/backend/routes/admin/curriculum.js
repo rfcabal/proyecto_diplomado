@@ -17,7 +17,7 @@ router.post('/modificar', async (req, res, next) => {
         if(req.files && Object.keys(req.files).length > 0) {
             const imagen = req.files.imagen;
             img_id = (await uploader(imagen.tempFilePath)).public_id;
-            if(foto) await (destroy(media))
+            if(foto) await (destroy(foto))
         }
 
         const obj = {
